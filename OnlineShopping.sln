@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.64
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShopping", "OnlineShopping\OnlineShopping.csproj", "{8CA32309-BF5C-4ACC-81BB-80A0A37B3987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShoppingTest", "OnlineShoppingTest\OnlineShoppingTest.csproj", "{FC610F1B-F6F9-4144-B9D1-5E863AD44940}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CA32309-BF5C-4ACC-81BB-80A0A37B3987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA32309-BF5C-4ACC-81BB-80A0A37B3987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA32309-BF5C-4ACC-81BB-80A0A37B3987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA32309-BF5C-4ACC-81BB-80A0A37B3987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC610F1B-F6F9-4144-B9D1-5E863AD44940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC610F1B-F6F9-4144-B9D1-5E863AD44940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC610F1B-F6F9-4144-B9D1-5E863AD44940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC610F1B-F6F9-4144-B9D1-5E863AD44940}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

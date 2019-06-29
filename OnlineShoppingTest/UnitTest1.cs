@@ -141,6 +141,63 @@ namespace OnlineShoppingTest
             int budget = 4;
 
             Assert.AreEqual(0, Program.GetMaxValueProducts(budget, dtTest));
+
+
+        }
+
+        [TestMethod]
+        public void TestProduct8()
+        {
+            DataTable dtTest = new DataTable();
+            dtTest.Columns.Add("Id", typeof(int));
+            dtTest.Columns.Add("ProductName", typeof(string));
+            dtTest.Columns.Add("Price", typeof(int));
+            dtTest.Columns.Add("Value", typeof(int));
+
+            // Here we add five DataRows.
+            dtTest.Rows.Add(1, "P1", 1, 1);
+            dtTest.Rows.Add(2, "P2", 1, 1);
+            dtTest.Rows.Add(3, "P3", 1, 1);
+            dtTest.Rows.Add(4, "P4", 1, 1);
+
+            int budget = 1;
+
+            Assert.AreEqual(1, Program.GetMaxValueProducts(budget, dtTest));
+        }
+
+
+        [TestMethod]
+        public void TestProduct9()
+        {
+            DataTable dtTest = new DataTable();
+            dtTest.Columns.Add("Id", typeof(int));
+            dtTest.Columns.Add("ProductName", typeof(string));
+            dtTest.Columns.Add("Price", typeof(int));
+            dtTest.Columns.Add("Value", typeof(int));
+
+            // Here we add five DataRows.
+            dtTest.Rows.Add(1, "P1", 0, 0);
+
+            int budget = 1;
+
+            Assert.AreEqual(0, Program.GetMaxValueProducts(budget, dtTest));
+        }
+
+        [TestMethod]
+        public void TestProduct10()
+        {
+            DataTable dtTest = new DataTable();
+            dtTest.Columns.Add("Id", typeof(int));
+            dtTest.Columns.Add("ProductName", typeof(string));
+            dtTest.Columns.Add("Price", typeof(int));
+            dtTest.Columns.Add("Value", typeof(int));
+
+            // Here we add five DataRows.
+            dtTest.Rows.Add(1, "P11", 0, 110);
+
+            int budget = 1;
+
+            Assert.AreEqual(110, Program.GetMaxValueProducts(budget, dtTest));
         }
     }
 }

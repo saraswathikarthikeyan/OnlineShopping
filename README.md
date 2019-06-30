@@ -43,3 +43,19 @@ P3 3 8
 
 Output: Maximum Value : 9, Cost Spent : 3 , Products: P1 and P2
 
+## Unit Testing
+Unit test for the project is written in the folder "OnlineShoppingTest" . To run the test go to the tab: 
+  Test -> Windows -> Test Explorer
+ 
+ $ On the test explorer window click the link "Run All"
+ 
+ $ The window will display Test cases and its status.
+ 
+ 
+ 
+ 
+  
+
+
+
+

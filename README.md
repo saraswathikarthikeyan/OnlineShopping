@@ -17,9 +17,9 @@ Project is created with:
 To run the project in the local, download the project as zipped folder from git
 https://github.com/saraswathikarthikeyan/OnlineShopping.git
 
-$ Place the folder in the local path.
+$ Place the folder in the local path/ your development environemnt.
 
-$ open the solution file "OnlineShopping.sln" in the in Visual Studio 
+$ Inside the folder, open the solution file "OnlineShopping.sln" in the in Visual Studio 
 
 $ Run the project - press the functional key : F5 (or)
                   - Debug -> Start debugging
@@ -27,3 +27,19 @@ $ Run the project - press the functional key : F5 (or)
 $ Console window will be prompted to ask the input from the user.
 
 $ provide the input to view the output.
+
+## Example use
+$ Enter the uer budget : 3
+
+$ Enter the number of products : 3
+
+$ Product List in the order: ProductName Cost Value
+
+P1 1 3
+
+P2 2 6
+
+P3 3 8
+
+Output: Maximum Value : 9, Cost Spent : 3 , Products: P1 and P2
+

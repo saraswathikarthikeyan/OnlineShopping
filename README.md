@@ -16,7 +16,7 @@ Project is created with:
 Language: C#
 
 ## Setup
-To run the project in the local, download the project as zipped folder from git
+To run the project in the local, download the project as zipped folder from git using the link provided / or git clone to the local folder
 https://github.com/saraswathikarthikeyan/OnlineShopping.git
 
 $ Place the folder in the local path/ your development environemnt.

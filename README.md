@@ -8,7 +8,9 @@ Write a program that receives a list of products (defined by Id, Name, Price and
 
 ## Technologies
 Project is created with:
-IDE : Microsoft Visual Studio 2017
+
+ IDE : Microsoft Visual Studio 2017 
+ 
 .Net Framework Version: 4.7
 
 ## Setup
@@ -16,8 +18,12 @@ To run the project in the local, download the project as zipped folder from git
 https://github.com/saraswathikarthikeyan/OnlineShopping.git
 
 $ Place the folder in the local path.
+
 $ open the solution file "OnlineShopping.sln" in the in Visual Studio 
+
 $ Run the project - press the functional key : F5 (or)
                   - Debug -> Start debugging
+                  
 $ Console window will be prompted to ask the input from the user.
+
 $ provide the input to view the output.

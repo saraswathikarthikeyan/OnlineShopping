@@ -16,7 +16,7 @@ Project is created with:
 Language: C#
 
 ## Setup
-To run the project in the local, download the project as zipped folder from git using the link provided / or git clone to the local folder
+To run the project in local, download the project as zipped folder from git using the link provided / or git clone to the local folder
 
 https://github.com/saraswathikarthikeyan/OnlineShopping.git
 
@@ -24,12 +24,12 @@ $ Place the folder in the local path/ your development environemnt.
 
 $ Inside the folder, open the solution file "OnlineShopping.sln" in the in Visual Studio 
 
-$ Run the project - press the functional key : F5 (or)
+$ To Run the project - press the functional key : F5 (or)
                   - Debug -> Start debugging
                   
-$ Console window will be prompted to ask the input from the user.
+$ Console window will be prompted and ask for input from the user.
 
-$ provide the input to view the output.
+$ Provide the input to view the output.
 
 ## Example use
 $ Enter the uer budget : 3
@@ -54,7 +54,7 @@ Unit test for the project is written in the folder "OnlineShoppingTest" . To run
  
  $ On the test explorer window click the link "Run All" to run the test cases.
  
- $ The window will display Test cases and its status.
+ $ The window will display test cases and its status.
  
  ## Other Info
  If the project is not running or if you face any other errors:

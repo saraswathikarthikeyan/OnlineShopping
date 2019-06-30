@@ -33,7 +33,7 @@ $ Enter the uer budget : 3
 
 $ Enter the number of products : 3
 
-$ Product List in the order: ProductName Cost Value
+$ Enter the product List in the order: ProductName Cost Value
 
 P1 1 3
 

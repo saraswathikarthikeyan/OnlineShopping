@@ -43,7 +43,9 @@ P2 2 6
 
 P3 3 8
 
-Output: Maximum Value : 9, Cost Spent : 3 , Products: P1 and P2
+Output: 
+
+Maximum Value of product purchased: : 9, Cost Spent : 3 , Product purchased: P1 and P2
 
 ## Unit Testing
 Unit test for the project is written in the folder "OnlineShoppingTest" . To run the test go to the tab: 

@@ -13,6 +13,8 @@ Project is created with:
  
 .Net Framework Version: 4.7
 
+Language: C#
+
 ## Setup
 To run the project in the local, download the project as zipped folder from git
 https://github.com/saraswathikarthikeyan/OnlineShopping.git
@@ -47,9 +49,18 @@ Output: Maximum Value : 9, Cost Spent : 3 , Products: P1 and P2
 Unit test for the project is written in the folder "OnlineShoppingTest" . To run the test go to the tab: 
   Test -> Windows -> Test Explorer
  
- $ On the test explorer window click the link "Run All"
+ $ On the test explorer window click the link "Run All" to run the test cases.
  
  $ The window will display Test cases and its status.
+ 
+ ## Other Info
+ If the project is not running or if you face any other errors:
+ 
+$ In the "Solution Explorer" window check all the project references are resolved. 
+If not add the references using the "Manage Nuget Manager.
+
+$ check the target .Net framework. The code is developed using target framework 4.5.2
+ 
  
  
  

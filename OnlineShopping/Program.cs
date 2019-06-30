@@ -84,9 +84,9 @@ namespace OnlineShopping
                     }
                     costSpent = costSpent + row.Field<int>("Price");
                 }
-                Console.WriteLine("Maximum Value: {0}", toatlValue);
-                Console.WriteLine("Product List: {0}", productNames);
-                Console.WriteLine("Cost Spent: {0}", costSpent);
+                Console.WriteLine("Maximum Value of product purchased: {0}", toatlValue);
+                Console.WriteLine("Product purchased: {0}", productNames);
+                Console.WriteLine("Cost Spent: {0}CHF", costSpent);
                 /* Code to Display the Result: Product Name: Value: CostSpent - Ends */
 
             }
@@ -117,7 +117,7 @@ namespace OnlineShopping
                 dtProduct.Columns.Add("Price", typeof(int));
                 dtProduct.Columns.Add("Value", typeof(int));
 
-                Console.WriteLine("Enter the Product Details");
+                Console.WriteLine("Enter the Product Details in the order: ProductName Cost Value");
                 Console.WriteLine("Example: Product1 20 100");
 
                 //Iterate through the number of products to store the product details

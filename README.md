@@ -63,13 +63,3 @@ $ In the "Solution Explorer" window check all the project references are resolve
 If not add the references using the "Manage Nuget Manager.
 
 $ check the target .Net framework. The code is developed using target framework 4.5.2
- 
- 
- 
- 
- 
-  
-
-
-
-

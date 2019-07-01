@@ -9,6 +9,7 @@ namespace OnlineShopping
 {
     public class Program
     {
+        //Method to finds the Maximum Value of products can be bought with the user budget.
         public static int GetMaxValueProducts(int budget, DataTable dtProduct)
         {
             int toatlValue = 0;
@@ -16,42 +17,24 @@ namespace OnlineShopping
             string productsList = "";
             string productNames = "";
 
-            try
-            {
-                List<string> arrSubsetIds = new List<string>();
+            try {
+                //Sorts the data table in ascending order based on Ids
                 DataView dv = dtProduct.DefaultView;
                 dv.Sort = "Id asc";
-
                 DataTable sortedDT = dv.ToTable();
 
-                //Fetches the Product Ids and keep in an array
+                //Fetches the Product Ids from DT and keep in an array
                 int[] arrIds = sortedDT.AsEnumerable().Select(s => s.Field<int>("Id")).ToArray<int>();
 
-                /* * Code Fetches the Subset of the ProductIDs : Starts*/
-                List<string> arrList = new List<string>();
-                for (int i = 0; i < Math.Pow(2, arrIds.Length); i++){
-                    string combineIds = "";
-                    for (int j = 0; j < arrIds.Length; j++){
-                        if ((i & (1 << (arrIds.Length - j - 1))) != 0) {
-                            if (combineIds != "")  {
-                                combineIds = combineIds + "," + arrIds[j].ToString();
-                            }
-                            else {
-                                combineIds = arrIds[j].ToString();
-                            }
-                        }
-                    }
-                    arrList.Add(combineIds);
-                }
-                /* * Code Fetches the Subset of the ProductIDs : Ends*/
+                /* * Calls the method to get the Subsets of an Array*/
+                List<string> arrListIds = GetSubStrings(arrIds);                
 
-                /* Iterates through the subset Ids in the Dataset and Calcualtes Max Value - Starts */
+                /* Iterates through the subset Ids in the Dataset and Calcualtes Max Value of Product - Starts */
                 Dictionary<string, int> dictProduct = new Dictionary<string, int>();
-                foreach (var str in arrList) {                    
+                foreach (var str in arrListIds) {                    
                     int totValue = 0;
                     int totCost = 0;
                     if (str != "") {
-
                         //Calculate the sum of total value and Cost for all subset of Ids
                         DataRow[] results = sortedDT.Select("Id IN(" + str + ")");
                         foreach (DataRow row in results) {
@@ -74,32 +57,58 @@ namespace OnlineShopping
                 productsList = maxValue.Key;
 
                 /* Code to Display the Result: Product Name: Value: CostSpent - Starts */
-                DataRow[] productRow = sortedDT.Select("Id IN(" + productsList + ")");
-                foreach (DataRow row in productRow) {
-                    if (productNames == ""){
-                        productNames = row.Field<string>("ProductName");
+                if (productsList!="") { 
+                    DataRow[] productRow = sortedDT.Select("Id IN(" + productsList + ")");
+                    foreach (DataRow row in productRow) {
+                        if (productNames == ""){
+                            productNames = row.Field<string>("ProductName");
+                        }
+                        else {
+                            productNames = productNames + "," + row.Field<string>("ProductName");
+                        }
+                        costSpent = costSpent + row.Field<int>("Price");
                     }
-                    else {
-                        productNames = productNames + "," + row.Field<string>("ProductName");
-                    }
-                    costSpent = costSpent + row.Field<int>("Price");
                 }
                 Console.WriteLine("Maximum Value of product purchased: {0}", toatlValue);
                 Console.WriteLine("Product purchased: {0}", productNames);
                 Console.WriteLine("Cost Spent: {0}CHF", costSpent);
                 /* Code to Display the Result: Product Name: Value: CostSpent - Ends */
-
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: {0}", ex.Message);
+            catch (Exception ex){
+                throw ex;
             }
             return toatlValue;
         }
+
+        /* * Method finds the subsets of Array*/
+        public static List<string> GetSubStrings(int[] arrIds)
+        {
+            List<string> arrSubset = new List<string>();
+            try { 
+                for (int i = 0; i < Math.Pow(2, arrIds.Length); i++) {
+                    string combineIds = "";
+                    for (int j = 0; j < arrIds.Length; j++) {
+                        if ((i & (1 << (arrIds.Length - j - 1))) != 0){
+                            if (combineIds != ""){
+                                combineIds = combineIds + "," + arrIds[j].ToString();
+                            }
+                            else{
+                                combineIds = arrIds[j].ToString();
+                            }
+                        }
+                    }
+                    arrSubset.Add(combineIds);
+                }
+            }
+            catch(Exception ex){
+                throw ex;
+            }
+            return arrSubset;
+        }
+
         public static void Main(string[] args)
         {
-            try
-            {
+            try{
                 //Prompt the user to enter the Budget
                 Console.WriteLine("Enter your budget");
                 string strBudget = Console.ReadLine();
@@ -110,7 +119,7 @@ namespace OnlineShopping
                 string strproductCount = Console.ReadLine();
                 int numOfProducts = Convert.ToInt32(strproductCount);
 
-                //Create the Table Columns to add the Product Details
+                //Create the Data Table and Columns to add the Product Details
                 DataTable dtProduct = new DataTable();
                 dtProduct.Columns.Add("Id", typeof(int));
                 dtProduct.Columns.Add("ProductName", typeof(string));
@@ -127,15 +136,14 @@ namespace OnlineShopping
                 }
 
                 //Calls method to Get the Maximum Value of Products user can buy with budget.
-                int totValue = GetMaxValueProducts(budget, dtProduct);
+                int totValue = GetMaxValueProducts(budget, dtProduct);                
                 Console.ReadLine();
+
             }
             catch (Exception ex){
                 Console.WriteLine(" {0} - Something went wrong! check your input!", ex.Message);
                 Console.ReadLine();
             }
-        }
-
-       
+        }       
     }
 }
